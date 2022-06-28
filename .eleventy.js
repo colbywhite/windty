@@ -15,10 +15,17 @@ module.exports = function(eleventyConfig) {
   // Watch targets
   eleventyConfig.addWatchTarget("./src/styles/");
 
+  // Since GitLab pages are published in a subdir, set the prefix when on GitLab.
+  var pathPrefix = "";
+  if (process.env.CI_PROJECT_NAME) {
+    pathPrefix = process.env.CI_PROJECT_NAME.split('/')[1];
+  }
+
   return {
     dir: {
       input: "src"
-    }
+    },
+    pathPrefix
   }
 };
 
