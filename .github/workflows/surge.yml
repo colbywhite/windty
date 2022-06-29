@@ -20,6 +20,6 @@ jobs:
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
-      - run: yarn install
+      - run: yarn install --prefer-offline
       - run: yarn build
       - run: yarn surge --domain windty.surge.sh ./_site --token ${{ secrets.SURGE_TOKEN }}
