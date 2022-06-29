@@ -37,6 +37,7 @@
     "postcss-cli": "^9.1.0",
     "postcss-import": "^14.1.0",
     "rimraf": "^3.0.2",
+    "surge": "^0.23.1",
     "tailwindcss": "^3.1.3"
   }
 }
